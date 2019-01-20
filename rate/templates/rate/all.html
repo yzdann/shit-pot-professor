@@ -1,0 +1,15 @@
+
+<h1>رده بندی</h1>
+<p>اگر می‌خواهید شما هم رای بدهید <a href="{% url 'first' slug %}">اینجا </a>کلیک کنید</p><br>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+{% for professor in professors %}
+  <p>{{ professor.first_name }} {{ professor.last_name }} | {{ professor.score}}</p>
+{% endfor %}
+

@@ -1,0 +1,16 @@
+  <p>{{ professor.first_name }} {{ professor.last_name }}</p>
+
+  <form action="{% url 'upvote' slug professor.uuid %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="upvote" value="&#8593;" />
+  </form>
+
+  <form action="{% url 'next' slug professor.uuid %}" method="GET">
+    <input type="submit" name="skip" value="skip" />
+  </form>
+
+  <form action="{% url 'downvote' slug professor.uuid %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="upvote" value="&#8595;" />
+  </form>
+
